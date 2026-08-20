@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Dharmendra Singh" />
+    <title>Dharmendra Singh | Portfolio</title>
+    <style>
+      :root { --ink:#12211d; --muted:#61716c; --paper:#f7f6f1; --line:#dce2dc; --accent:#1b755b; --dark:#11251f; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; }
+      a { color:inherit; text-decoration:none; }
+      .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
+      nav { display:flex; align-items:center; justify-content:space-between; padding:24px 0; }
+      .logo { font-weight:800; letter-spacing:-.07em; font-size:1.45rem; }
+      .logo span { color:var(--accent); }
+      .links { display:flex; gap:25px; color:var(--muted); font-size:.93rem; }
+      .links a:hover { color:var(--accent); }
+      .hero { min-height:580px; padding:82px 0 70px; display:grid; grid-template-columns:1.35fr .65fr; gap:50px; align-items:center; }
+      .eyebrow { color:var(--accent); text-transform:uppercase; font-size:.77rem; font-weight:800; letter-spacing:.13em; }
+      h1 { font-size:clamp(3.2rem, 8vw, 6.8rem); letter-spacing:-.075em; line-height:.91; margin:16px 0 27px; max-width:800px; }
+      .hero h1 em { color:var(--accent); font-style:normal; }
+      .intro { font-size:1.15rem; color:var(--muted); max-width:600px; margin:0 0 32px; }
+      .buttons { display:flex; gap:13px; flex-wrap:wrap; }
+      .button { display:inline-flex; padding:12px 19px; border-radius:99px; font-size:.91rem; font-weight:700; border:1px solid var(--dark); }
+      .button.primary { background:var(--dark); color:white; }
+      .button:hover { transform:translateY(-2px); }
+      .portrait { aspect-ratio:3/4; max-width:335px; justify-self:end; background:linear-gradient(135deg,#b7d7c6,#e5e1c7); border-radius:170px 170px 16px 16px; padding:12px; display:grid; place-items:center; }
+      .portrait-inner { width:100%; height:100%; border:1px dashed rgba(18,33,29,.34); border-radius:160px 160px 8px 8px; display:grid; place-items:center; text-align:center; color:var(--dark); padding:25px; }
+      .portrait strong { display:block; font-size:1.25rem; margin-bottom:8px; }
+      section { padding:100px 0; border-top:1px solid var(--line); }
+      .section-head { display:grid; grid-template-columns:.5fr 1.5fr; gap:40px; margin-bottom:42px; }
+      h2 { font-size:clamp(2rem,4vw,3.2rem); letter-spacing:-.06em; margin:0; line-height:1; }
+      .section-head p { color:var(--muted); font-size:1.08rem; margin:0; max-width:620px; }
+      .about { display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+      .about p { margin:0; font-size:1.12rem; }
+      .fact-list { display:grid; gap:14px; }
+      .fact { border-bottom:1px solid var(--line); padding:0 0 14px; display:flex; justify-content:space-between; gap:20px; }
+      .fact span { color:var(--muted); }
+      .skills { display:flex; flex-wrap:wrap; gap:10px; }
+      .tag { padding:10px 15px; border:1px solid var(--line); border-radius:99px; font-size:.92rem; background:#fff; }
+      .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+      .project { min-height:330px; padding:25px; display:flex; flex-direction:column; justify-content:flex-end; border-radius:12px; background:#e3eee8; border:1px solid #d3e0d8; transition:transform .2s; }
+      .project:nth-child(2) { background:#eee8d6; border-color:#e2dac4; }
+      .project:nth-child(3) { background:#dde9eb; border-color:#cddcdf; }
+      .project:hover { transform:translateY(-5px); }
+      .project-type { text-transform:uppercase; letter-spacing:.12em; font-weight:800; color:var(--accent); font-size:.7rem; }
+      .project h3 { margin:10px 0 7px; letter-spacing:-.04em; font-size:1.5rem; }
+      .project p { color:#40534b; font-size:.92rem; margin:0; }
+      .timeline { max-width:770px; margin-left:auto; }
+      .role { padding:0 0 27px; margin-bottom:27px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:150px 1fr; gap:28px; }
+      .role time { color:var(--muted); font-size:.9rem; }
+      .role h3 { margin:0 0 5px; font-size:1.25rem; letter-spacing:-.03em; }
+      .role p { margin:0; color:var(--muted); }
+      .contact { background:var(--dark); color:#f7f6f1; border:0; text-align:center; }
+      .contact h2 { max-width:650px; margin:0 auto 24px; }
+      .contact p { color:#b5c8bf; max-width:530px; margin:0 auto 30px; }
+      .contact .button { border-color:#f7f6f1; }
+      .contact .primary { background:#f7f6f1; color:var(--dark); }
+      footer { padding:25px 0; background:var(--dark); color:#b5c8bf; border-top:1px solid #345147; font-size:.85rem; }
+      @media (max-width:720px) { .links { display:none; } .hero,.about,.section-head { grid-template-columns:1fr; } .hero { padding-top:55px; } .portrait { justify-self:start; width:230px; } .projects { grid-template-columns:1fr; } .role { grid-template-columns:1fr; gap:6px; } section { padding:70px 0; } }
+    </style>
+  </head>
+  <body>
+    <header class="wrap"><nav><a class="logo" href="#top">DS<span>.</span></a><div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav></header>
+    <main id="top">
+      <div class="wrap hero">
+        <div><div class="eyebrow">Developer portfolio · 2026</div><h1>Hi, I’m<br><em>Dharmendra</em> Singh.</h1><p class="intro">A software developer building practical web applications and data-driven systems with JavaScript, Python, and machine learning.</p><div class="buttons"><a class="button primary" href="#work">View my work</a><a class="button" href="https://github.com/dharmendra3110" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+        <div class="portrait"><div class="portrait-inner"><div><strong>Your photo here</strong><small>Replace this panel with a professional portrait.</small></div></div></div>
+      </div>
+      <section id="about"><div class="wrap"><div class="section-head"><h2>About me</h2><p>I bring curiosity, discipline, and a practical approach to every project. This section is ready for your personal introduction from your résumé.</p></div><div class="about"><p>Write 2–3 sentences here about your background, the kind of opportunities you’re looking for, and the impact you want to make. Keep it honest, specific, and human.</p><div class="fact-list"><div class="fact"><span>Based in</span><b>Your city, India</b></div><div class="fact"><span>Education</span><b>Your degree / college</b></div><div class="fact"><span>Open to</span><b>Internships · Full-time roles</b></div></div></div></div></section>
+      <section id="skills"><div class="wrap"><div class="section-head"><h2>Skills</h2><p>My work combines modern web development with data analysis and predictive modelling.</p></div><div class="skills"><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">REST APIs</span><span class="tag">Machine Learning</span><span class="tag">Data Preprocessing</span><span class="tag">Git & GitHub</span></div></div></section>
+      <section id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p>A selection of web and data-focused applications from my GitHub profile.</p></div><div class="projects"><a class="project" href="https://github.com/dharmendra3110/Smart-Assignment-and-Feedback-Management-System" target="_blank" rel="noreferrer"><div class="project-type">React · Express · MongoDB</div><h3>Smart Assignment & Feedback System ↗</h3><p>A full-stack platform for teachers and students to manage assignments, submissions, grades, feedback, and doubts.</p></a><a class="project" href="https://github.com/dharmendra3110/data-Science-project" target="_blank" rel="noreferrer"><div class="project-type">Python · Machine Learning</div><h3>Predictive Data Science ↗</h3><p>Predictive models built with data preprocessing, feature engineering, Logistic Regression, Random Forest, and cross-validation.</p></a><a class="project" href="https://github.com/dharmendra3110/Student_predictor" target="_blank" rel="noreferrer"><div class="project-type">JavaScript · Full Stack</div><h3>Student Predictor ↗</h3><p>A web application with dedicated frontend and backend components for student prediction workflows.</p></a></div></div></section>
+      <section id="experience"><div class="wrap"><div class="section-head"><h2>What I build</h2><p>I’m developing hands-on experience through full-stack applications and data-science projects.</p></div><div class="timeline"><article class="role"><time>Full stack</time><div><h3>Web applications for real workflows</h3><p>Building React and Express applications with authentication, REST APIs, file uploads, role-based experiences, and database-backed data flows.</p></div></article><article class="role"><time>Data science</time><div><h3>Predictive systems from real-world data</h3><p>Preparing data, engineering features, training machine-learning models, and validating results through cross-validation.</p></div></article></div></div></section>
+      <section id="contact" class="contact"><div class="wrap"><h2>Let’s build something worthwhile.</h2><p>I’m open to conversations about software opportunities, data projects, and collaborations.</p><div class="buttons" style="justify-content:center"><a class="button primary" href="https://github.com/dharmendra3110" target="_blank" rel="noreferrer">Visit GitHub ↗</a><a class="button" href="https://github.com/dharmendra3110?tab=repositories" target="_blank" rel="noreferrer">All repositories ↗</a></div></div></section>
+    </main>
+    <footer><div class="wrap">© 2026 Dharmendra Singh. Designed with intention.</div></footer>
+  </body>
+</html>
