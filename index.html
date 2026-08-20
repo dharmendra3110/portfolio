@@ -1,80 +1,1058 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Dharmendra Singh" />
-    <title>Dharmendra Singh | Portfolio</title>
-    <style>
-      :root { --ink:#12211d; --muted:#61716c; --paper:#f7f6f1; --line:#dce2dc; --accent:#1b755b; --dark:#11251f; }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; }
-      a { color:inherit; text-decoration:none; }
-      .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
-      nav { display:flex; align-items:center; justify-content:space-between; padding:24px 0; }
-      .logo { font-weight:800; letter-spacing:-.07em; font-size:1.45rem; }
-      .logo span { color:var(--accent); }
-      .links { display:flex; gap:25px; color:var(--muted); font-size:.93rem; }
-      .links a:hover { color:var(--accent); }
-      .hero { min-height:580px; padding:82px 0 70px; display:grid; grid-template-columns:1.35fr .65fr; gap:50px; align-items:center; }
-      .eyebrow { color:var(--accent); text-transform:uppercase; font-size:.77rem; font-weight:800; letter-spacing:.13em; }
-      h1 { font-size:clamp(3.2rem, 8vw, 6.8rem); letter-spacing:-.075em; line-height:.91; margin:16px 0 27px; max-width:800px; }
-      .hero h1 em { color:var(--accent); font-style:normal; }
-      .intro { font-size:1.15rem; color:var(--muted); max-width:600px; margin:0 0 32px; }
-      .buttons { display:flex; gap:13px; flex-wrap:wrap; }
-      .button { display:inline-flex; padding:12px 19px; border-radius:99px; font-size:.91rem; font-weight:700; border:1px solid var(--dark); }
-      .button.primary { background:var(--dark); color:white; }
-      .button:hover { transform:translateY(-2px); }
-      .portrait { aspect-ratio:3/4; max-width:335px; justify-self:end; background:linear-gradient(135deg,#b7d7c6,#e5e1c7); border-radius:170px 170px 16px 16px; padding:12px; display:grid; place-items:center; }
-      .portrait-inner { width:100%; height:100%; border:1px dashed rgba(18,33,29,.34); border-radius:160px 160px 8px 8px; display:grid; place-items:center; text-align:center; color:var(--dark); padding:25px; }
-      .portrait strong { display:block; font-size:1.25rem; margin-bottom:8px; }
-      section { padding:100px 0; border-top:1px solid var(--line); }
-      .section-head { display:grid; grid-template-columns:.5fr 1.5fr; gap:40px; margin-bottom:42px; }
-      h2 { font-size:clamp(2rem,4vw,3.2rem); letter-spacing:-.06em; margin:0; line-height:1; }
-      .section-head p { color:var(--muted); font-size:1.08rem; margin:0; max-width:620px; }
-      .about { display:grid; grid-template-columns:1fr 1fr; gap:50px; }
-      .about p { margin:0; font-size:1.12rem; }
-      .fact-list { display:grid; gap:14px; }
-      .fact { border-bottom:1px solid var(--line); padding:0 0 14px; display:flex; justify-content:space-between; gap:20px; }
-      .fact span { color:var(--muted); }
-      .skills { display:flex; flex-wrap:wrap; gap:10px; }
-      .tag { padding:10px 15px; border:1px solid var(--line); border-radius:99px; font-size:.92rem; background:#fff; }
-      .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-      .project { min-height:330px; padding:25px; display:flex; flex-direction:column; justify-content:flex-end; border-radius:12px; background:#e3eee8; border:1px solid #d3e0d8; transition:transform .2s; }
-      .project:nth-child(2) { background:#eee8d6; border-color:#e2dac4; }
-      .project:nth-child(3) { background:#dde9eb; border-color:#cddcdf; }
-      .project:hover { transform:translateY(-5px); }
-      .project-type { text-transform:uppercase; letter-spacing:.12em; font-weight:800; color:var(--accent); font-size:.7rem; }
-      .project h3 { margin:10px 0 7px; letter-spacing:-.04em; font-size:1.5rem; }
-      .project p { color:#40534b; font-size:.92rem; margin:0; }
-      .timeline { max-width:770px; margin-left:auto; }
-      .role { padding:0 0 27px; margin-bottom:27px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:150px 1fr; gap:28px; }
-      .role time { color:var(--muted); font-size:.9rem; }
-      .role h3 { margin:0 0 5px; font-size:1.25rem; letter-spacing:-.03em; }
-      .role p { margin:0; color:var(--muted); }
-      .contact { background:var(--dark); color:#f7f6f1; border:0; text-align:center; }
-      .contact h2 { max-width:650px; margin:0 auto 24px; }
-      .contact p { color:#b5c8bf; max-width:530px; margin:0 auto 30px; }
-      .contact .button { border-color:#f7f6f1; }
-      .contact .primary { background:#f7f6f1; color:var(--dark); }
-      footer { padding:25px 0; background:var(--dark); color:#b5c8bf; border-top:1px solid #345147; font-size:.85rem; }
-      @media (max-width:720px) { .links { display:none; } .hero,.about,.section-head { grid-template-columns:1fr; } .hero { padding-top:55px; } .portrait { justify-self:start; width:220px; height:290px; } .projects { grid-template-columns:1fr; } .role { grid-template-columns:1fr; gap:6px; } section { padding:70px 0; } }
-    </style>
-  </head>
-  <body>
-    <header class="wrap"><nav><a class="logo" href="#top">DS<span>.</span></a><div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav></header>
-    <main id="top">
-      <div class="wrap hero">
-        <div><div class="eyebrow">AI & Data Science student · 2026</div><h1>Hi, I’m<br><em>Dharmendra</em> Singh.</h1><p class="intro">A Computer Science (Data Science) student building useful AI, data, and full-stack applications with Python, Java, JavaScript, and SQL.</p><div class="buttons"><a class="button primary" href="#work">View my work</a><a class="button" href="https://github.com/dharmendra3110" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
-        <div class="portrait"><img src="profile.jpeg" alt="Dharmendra Singh"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="Portfolio of Dharmendra Singh - Computer Science and Data Science student, AI and Data Science enthusiast." />
+
+  <title>Dharmendra Singh | Portfolio</title>
+
+  <style>
+
+    :root {
+      --ink: #12211d;
+      --muted: #61716c;
+      --paper: #f7f6f1;
+      --line: #dce2dc;
+      --accent: #1b755b;
+      --dark: #11251f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.07em;
+      font-size: 1.45rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .links {
+      display: flex;
+      gap: 25px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero {
+      min-height: 560px;
+      padding: 70px 0 60px;
+
+      display: grid;
+
+      /* More space for text, less for photo */
+      grid-template-columns: 1.5fr 0.5fr;
+
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.77rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      letter-spacing: -0.075em;
+      line-height: 0.91;
+      margin: 16px 0 27px;
+      max-width: 800px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 0 32px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      padding: 12px 19px;
+      border-radius: 99px;
+      font-size: 0.91rem;
+      font-weight: 700;
+      border: 1px solid var(--dark);
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--dark);
+      color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       PROFILE PHOTO
+    ========================== */
+
+    .portrait {
+      width: 285px;
+      height: 370px;
+
+      justify-self: end;
+
+      background: linear-gradient(
+        135deg,
+        #b7d7c6,
+        #e5e1c7
+      );
+
+      border-radius: 145px 145px 18px 18px;
+
+      padding: 7px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 18px 45px rgba(18, 33, 29, 0.16);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      /* Keeps your face toward the upper part */
+      object-position: center 18%;
+
+      border-radius: 138px 138px 12px 12px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.5fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.06em;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 0;
+      max-width: 620px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .about p {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .fact {
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 14px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .fact span {
+      color: var(--muted);
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      font-size: 0.92rem;
+      background: #fff;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 330px;
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      border-radius: 12px;
+
+      background: #e3eee8;
+      border: 1px solid #d3e0d8;
+
+      transition: transform 0.2s;
+    }
+
+    .project:nth-child(2) {
+      background: #eee8d6;
+      border-color: #e2dac4;
+    }
+
+    .project:nth-child(3) {
+      background: #dde9eb;
+      border-color: #cddcdf;
+    }
+
+    .project:nth-child(4) {
+      background: #e8e0eb;
+      border-color: #dcd1e0;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-type {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+
+    .project h3 {
+      margin: 10px 0 7px;
+      letter-spacing: -0.04em;
+      font-size: 1.5rem;
+    }
+
+    .project p {
+      color: #40534b;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    .timeline {
+      max-width: 770px;
+      margin-left: auto;
+    }
+
+    .role {
+      padding: 0 0 27px;
+      margin-bottom: 27px;
+
+      border-bottom: 1px solid var(--line);
+
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
+    }
+
+    .role time {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .role h3 {
+      margin: 0 0 5px;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .role p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact {
+      background: var(--dark);
+      color: #f7f6f1;
+      border: 0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    .contact p {
+      color: #b5c8bf;
+      max-width: 530px;
+      margin: 0 auto 30px;
+    }
+
+    .contact .button {
+      border-color: #f7f6f1;
+    }
+
+    .contact .primary {
+      background: #f7f6f1;
+      color: var(--dark);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 25px 0;
+      background: var(--dark);
+      color: #b5c8bf;
+      border-top: 1px solid #345147;
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        grid-template-columns: 1fr 0.55fr;
+        gap: 35px;
+      }
+
+      .portrait {
+        width: 250px;
+        height: 325px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 7vw, 5rem);
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 720px) {
+
+      .links {
+        display: none;
+      }
+
+      .hero,
+      .about,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 55px;
+        gap: 35px;
+      }
+
+      .portrait {
+        justify-self: start;
+
+        width: 220px;
+        height: 290px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .role {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+    }
+
+    /* =========================
+       SMALL MOBILE
+    ========================== */
+
+    @media (max-width: 430px) {
+
+      .wrap {
+        width: min(100% - 28px, 1120px);
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .intro {
+        font-size: 1rem;
+      }
+
+      .portrait {
+        width: 200px;
+        height: 265px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="wrap">
+
+    <nav>
+
+      <a class="logo" href="#top">
+        DS<span>.</span>
+      </a>
+
+      <div class="links">
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#work">
+          Work
+        </a>
+
+        <a href="#experience">
+          Experience
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </div>
-      <section id="about"><div class="wrap"><div class="section-head"><h2>About me</h2><p>I’m focused on applying machine learning, data analysis, and database systems to real-world problems while growing through hands-on development.</p></div><div class="about"><p>I am pursuing a Bachelor of Engineering in Computer Science Engineering (Data Science) at CMR Institute of Technology. I enjoy turning ideas into dependable applications, from predictive models and recommendation systems to full-stack management platforms.</p><div class="fact-list"><div class="fact"><span>Based in</span><b>Bengaluru, Karnataka</b></div><div class="fact"><span>Education</span><b>B.E. CSE (Data Science), 2027</b></div><div class="fact"><span>CGPA</span><b>8.93</b></div><div class="fact"><span>Open to</span><b>Internships · Graduate roles</b></div></div></div></div></section>
-      <section id="skills"><div class="wrap"><div class="section-head"><h2>Skills</h2><p>My work combines data analysis, machine learning, databases, and practical application development.</p></div><div class="skills"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Machine Learning</span><span class="tag">Pandas · NumPy</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">Git & GitHub</span><span class="tag">Linux</span></div></div></section>
-      <section id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p>A selection of data, AI, and web applications designed around practical workflows.</p></div><div class="projects"><article class="project"><div class="project-type">Python · MySQL · HTML</div><h3>Billing System Management</h3><p>A billing and purchase-tracking system with invoice generation, structured MySQL storage, and a streamlined web interface.</p></article><article class="project"><div class="project-type">Python · Pandas · Scikit-learn</div><h3>Movie Recommendation System</h3><p>A personalised recommendation engine using collaborative and content-based filtering, preprocessing, and similarity analysis.</p></article><article class="project"><div class="project-type">Python · Flask · Computer Vision</div><h3>AI Voice Assistant</h3><p>A voice assistant with face-recognition login, speech-to-text commands, task automation, and mobile control through a Flask API.</p></article><article class="project"><div class="project-type">Python · SQL · Flask/Django</div><h3>HomeMix Inventory System</h3><p>An inventory and order-management system with real-time reporting, secure role-based access, stock tracking, and CRUD workflows.</p></article></div></div></section>
-      <section id="experience"><div class="wrap"><div class="section-head"><h2>Experience & achievements</h2><p>Hands-on learning through a data-focused internship, hackathons, technical communities, and campus leadership.</p></div><div class="timeline"><article class="role"><time>3 months</time><div><h3>Data Analysis Intern · Unified Mentor</h3><p>Applied Python, Pandas, NumPy, and Matplotlib to dataset analysis; completed six data-driven projects covering preprocessing, modelling, visualisation, feature extraction, and reporting.</p></div></article><article class="role"><time>2024</time><div><h3>Hackathons & technical communities</h3><p>Participated in the Social Hackathon at CMRIT, Smart India Hackathon, and NMIT Hackathon; also took part in coding initiatives through GeeksforGeeks and Rise Community.</p></div></article><article class="role"><time>Recognition</time><div><h3>Campus achievements</h3><p>Winner at VTU Fest (GAT) Mime Competition and finalist in the Bytes Battles coding competition at CMRIT.</p></div></article></div></div></section>
-      <section id="contact" class="contact"><div class="wrap"><h2>Let’s build something worthwhile.</h2><p>I’m open to internship opportunities, graduate roles, data projects, and collaborations.</p><div class="buttons" style="justify-content:center"><a class="button primary" href="mailto:dharmendra.singh31102003@gmail.com">Email me</a><a class="button" href="https://www.linkedin.com/in/dharmendra-singh-666977304" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="button" href="https://github.com/dharmendra3110" target="_blank" rel="noreferrer">GitHub ↗</a><a class="button" href="https://leetcode.com/u/user2183aC/" target="_blank" rel="noreferrer">LeetCode ↗</a></div></div></section>
-    </main>
-    <footer><div class="wrap">© 2026 Dharmendra Singh. Designed with intention.</div></footer>
-  </body>
+
+    </nav>
+
+  </header>
+
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <div class="wrap hero">
+
+      <div>
+
+        <div class="eyebrow">
+          AI & Data Science student · 2026
+        </div>
+
+        <h1>
+          Hi, I’m<br>
+          <em>Dharmendra</em> Singh.
+        </h1>
+
+        <p class="intro">
+          A Computer Science (Data Science) student building useful AI,
+          data, and full-stack applications with Python, Java,
+          JavaScript, and SQL.
+        </p>
+
+        <div class="buttons">
+
+          <a class="button primary" href="#work">
+            View my work
+          </a>
+
+          <a
+            class="button"
+            href="https://github.com/dharmendra3110"
+            target="_blank"
+            rel="noreferrer">
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROFILE PHOTO -->
+
+      <div class="portrait">
+
+        <img
+          src="./profile.jpeg"
+          alt="Dharmendra Singh"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <h2>
+            About me
+          </h2>
+
+          <p>
+            I’m focused on applying machine learning, data analysis,
+            and database systems to real-world problems while growing
+            through hands-on development.
+          </p>
+
+        </div>
+
+
+        <div class="about">
+
+          <p>
+            I am pursuing a Bachelor of Engineering in Computer Science
+            Engineering (Data Science) at CMR Institute of Technology.
+            I enjoy turning ideas into dependable applications, from
+            predictive models and recommendation systems to full-stack
+            management platforms.
+          </p>
+
+
+          <div class="fact-list">
+
+            <div class="fact">
+
+              <span>
+                Based in
+              </span>
+
+              <b>
+                Bengaluru, Karnataka
+              </b>
+
+            </div>
+
+
+            <div class="fact">
+
+              <span>
+                Education
+              </span>
+
+              <b>
+                B.E. CSE (Data Science), 2027
+              </b>
+
+            </div>
+
+
+            <div class="fact">
+
+              <span>
+                CGPA
+              </span>
+
+              <b>
+                8.93
+              </b>
+
+            </div>
+
+
+            <div class="fact">
+
+              <span>
+                Open to
+              </span>
+
+              <b>
+                Internships · Graduate roles
+              </b>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <h2>
+            Skills
+          </h2>
+
+          <p>
+            My work combines data analysis, machine learning,
+            databases, and practical application development.
+          </p>
+
+        </div>
+
+
+        <div class="skills">
+
+          <span class="tag">Python</span>
+
+          <span class="tag">Java</span>
+
+          <span class="tag">JavaScript</span>
+
+          <span class="tag">MySQL</span>
+
+          <span class="tag">MongoDB</span>
+
+          <span class="tag">Machine Learning</span>
+
+          <span class="tag">Pandas · NumPy</span>
+
+          <span class="tag">Tableau</span>
+
+          <span class="tag">Power BI</span>
+
+          <span class="tag">Excel</span>
+
+          <span class="tag">Flask</span>
+
+          <span class="tag">Django</span>
+
+          <span class="tag">Git & GitHub</span>
+
+          <span class="tag">Linux</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="work">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <h2>
+            Selected work
+          </h2>
+
+          <p>
+            A selection of data, AI, and web applications designed
+            around practical workflows.
+          </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+          <article class="project">
+
+            <div class="project-type">
+              Python · MySQL · HTML
+            </div>
+
+            <h3>
+              Billing System Management
+            </h3>
+
+            <p>
+              A billing and purchase-tracking system with invoice
+              generation, structured MySQL storage, and a streamlined
+              web interface.
+            </p>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-type">
+              Python · Pandas · Scikit-learn
+            </div>
+
+            <h3>
+              Movie Recommendation System
+            </h3>
+
+            <p>
+              A personalised recommendation engine using collaborative
+              and content-based filtering, preprocessing, and similarity
+              analysis.
+            </p>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-type">
+              Python · Flask · Computer Vision
+            </div>
+
+            <h3>
+              AI Voice Assistant
+            </h3>
+
+            <p>
+              A voice assistant with face-recognition login,
+              speech-to-text commands, task automation, and mobile
+              control through a Flask API.
+            </p>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-type">
+              Python · SQL · Flask/Django
+            </div>
+
+            <h3>
+              HomeMix Inventory System
+            </h3>
+
+            <p>
+              An inventory and order-management system with real-time
+              reporting, secure role-based access, stock tracking,
+              and CRUD workflows.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <h2>
+            Experience & achievements
+          </h2>
+
+          <p>
+            Hands-on learning through a data-focused internship,
+            hackathons, technical communities, and campus leadership.
+          </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <article class="role">
+
+            <time>
+              3 months
+            </time>
+
+            <div>
+
+              <h3>
+                Data Analysis Intern · Unified Mentor
+              </h3>
+
+              <p>
+                Applied Python, Pandas, NumPy, and Matplotlib to
+                dataset analysis; completed six data-driven projects
+                covering preprocessing, modelling, visualisation,
+                feature extraction, and reporting.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="role">
+
+            <time>
+              2024
+            </time>
+
+            <div>
+
+              <h3>
+                Hackathons & technical communities
+              </h3>
+
+              <p>
+                Participated in the Social Hackathon at CMRIT,
+                Smart India Hackathon, and NMIT Hackathon; also took
+                part in coding initiatives through GeeksforGeeks
+                and Rise Community.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="role">
+
+            <time>
+              Recognition
+            </time>
+
+            <div>
+
+              <h3>
+                Campus achievements
+              </h3>
+
+              <p>
+                Winner at VTU Fest (GAT) Mime Competition and finalist
+                in the Bytes Battles coding competition at CMRIT.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact">
+
+      <div class="wrap">
+
+        <h2>
+          Let’s build something worthwhile.
+        </h2>
+
+        <p>
+          I’m open to internship opportunities, graduate roles,
+          data projects, and collaborations.
+        </p>
+
+
+        <div
+          class="buttons"
+          style="justify-content:center"
+        >
+
+          <a
+            class="button primary"
+            href="mailto:dharmendra.singh31102003@gmail.com">
+            Email me
+          </a>
+
+
+          <a
+            class="button"
+            href="https://www.linkedin.com/in/dharmendra-singh-666977304"
+            target="_blank"
+            rel="noreferrer">
+            LinkedIn ↗
+          </a>
+
+
+          <a
+            class="button"
+            href="https://github.com/dharmendra3110"
+            target="_blank"
+            rel="noreferrer">
+            GitHub ↗
+          </a>
+
+
+          <a
+            class="button"
+            href="https://leetcode.com/u/user2183aC/"
+            target="_blank"
+            rel="noreferrer">
+            LeetCode ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="wrap">
+      © 2026 Dharmendra Singh. Designed with intention.
+    </div>
+
+  </footer>
+
+
+</body>
+
 </html>
